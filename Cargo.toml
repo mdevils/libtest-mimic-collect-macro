@@ -1,0 +1,33 @@
+[package]
+name = "libtest-mimic-collect-macro"
+version = "0.1.0"
+edition = "2021"
+authors = ["Marat Dulin <mdevils@gmail.com>"]
+description = "Macro to process test attribute for libtest-mimic-collect"
+categories = [
+    "development-tools::testing",
+]
+documentation = "https://docs.rs/libtest-mimic-collect-macro/"
+homepage = "https://github.com/mdevils/libtest-mimic-collect-macro"
+repository = "https://github.com/mdevils/libtest-mimic-collect-macro"
+keywords = ["libtest", "libtest-mimic", "testing"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+
+[lib]
+proc-macro = true
+test = false
+doctest = false
+
+[dependencies]
+ctor = "0.2.9"
+libtest-mimic-collect = { path = "../libtest-mimic-collect" }
+syn = "2.0.90"
+quote = "1.0.37"
+proc-macro2 = "1.0.92"
+libtest-mimic = "0.8.1"
+
+[[test]]
+name = "test"
+harness = false
+path = "tests/test.rs"
