@@ -140,6 +140,8 @@ dependencies = [
 [[package]]
 name = "libtest-mimic-collect"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "758e997bbfb91609a33253bab227d164e1f5585c35f7631c6b6cd3fc1fab52e0"
 dependencies = [
  "libtest-mimic",
 ]

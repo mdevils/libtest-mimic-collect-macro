@@ -21,7 +21,7 @@ doctest = false
 
 [dependencies]
 ctor = "0.2.9"
-libtest-mimic-collect = { path = "../libtest-mimic-collect" }
+libtest-mimic-collect = "0.1.0"
 syn = "2.0.90"
 quote = "1.0.37"
 proc-macro2 = "1.0.92"
