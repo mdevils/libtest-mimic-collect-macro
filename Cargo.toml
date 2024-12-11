@@ -1,6 +1,6 @@
 [package]
 name = "libtest-mimic-collect-macro"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = ["Marat Dulin <mdevils@gmail.com>"]
 description = "Macro to process test attribute for libtest-mimic-collect"
@@ -20,14 +20,6 @@ test = false
 doctest = false
 
 [dependencies]
-ctor = "0.2.9"
-libtest-mimic-collect = "0.1.0"
-syn = "2.0.90"
+syn = { version = "2.0.90", features = ["full"] }
 quote = "1.0.37"
 proc-macro2 = "1.0.92"
-libtest-mimic = "0.8.1"
-
-[[test]]
-name = "test"
-harness = false
-path = "tests/test.rs"

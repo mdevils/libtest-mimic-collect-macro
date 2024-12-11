@@ -18,7 +18,7 @@ pub fn test(_args: TokenStream, input: TokenStream) -> TokenStream {
     (quote! {
         #sig #block
 
-        #[::ctor::ctor]
+        #[::libtest_mimic_collect::ctor]
         fn #ctor_ident() {
             use ::libtest_mimic_collect::ConvertResult;
             ::libtest_mimic_collect::TestCollection::add_test(

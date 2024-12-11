@@ -1,61 +1,10 @@
-# libtest-mimic-collect
+# libtest-mimic-collect-macro
 
-Automatically collect tests marked `#[test]` attribute from different modules.
+This crate provides a procedural macro for collecting tests for
+[libtest-mimic-collect](https://crates.io/crates/libtest-mimic-collect) crate.
 
-This library is useful when you want to use `libtest-mimic` library, but want to
-keep the convenience of using `#[test]` attribute.
-
-Tests are collected using `libtest-mimic-collect` library and can then be run. 
-
-## Installation
-
-Add these modules to the dependencies:
-
-* `libtest-mimic`
-* `libtest-mimic-collect`
-* `libtest-mimic-collect-macro`
-* `ctor`
-
-## Example
-
-Specify your test target in `Cargo.toml`:
-
-```toml
-[[test]]
-name = "test"
-harness = false
-path = "lib/test.rs"
-```
-
-Create a test module:
-
-```rust
-mod my_mod1;
-mod my_mod2;
-// ...
-
-#[macro_use]
-extern crate libtest_mimic_collect_macro;
-
-#[test]
-fn test_success() {
-    ()
-}
-
-#[test]
-fn test_failure() -> Result<(), String> {
-    Err("Something went wrong".into())
-}
-
-#[test]
-fn test_assert() {
-    assert_eq!(1, 2);
-}
-
-pub fn main() {
-    libtest_mimic_collect::TestCollection::run();
-}
-```
+Documentation on how to install and use this crate can be found here:
+[libtest-mimic-collect](https://docs.rs/libtest-mimic-collect).
 
 ## License
 
