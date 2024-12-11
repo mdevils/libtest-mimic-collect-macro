@@ -22,9 +22,9 @@ pub fn test(_args: TokenStream, input: TokenStream) -> TokenStream {
         fn #ctor_ident() {
             use ::libtest_mimic_collect::ConvertResult;
             ::libtest_mimic_collect::TestCollection::add_test(
-                ::libtest_mimic::Trial::test(
+                ::libtest_mimic_collect::libtest_mimic::Trial::test(
                     #test_name_str,
-                    || -> Result<(), ::libtest_mimic::Failed> {
+                    || -> Result<(), ::libtest_mimic_collect::libtest_mimic::Failed> {
                         match ::std::panic::catch_unwind(|| {
                             ::libtest_mimic_collect::TestCollection::convert_result(#ident())
                         }) {
